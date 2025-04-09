@@ -1,37 +1,52 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { QrReader } from "react-qr-reader";
+import { Html5QrcodeScanner } from "html5-qrcode";
 
 const AdminPage = () => {
   const [scannedData, setScannedData] = useState(null);
-  const [hasScanned, setHasScanned] = useState(false); // prevent multiple redirects
+  const [hasScanned, setHasScanned] = useState(false);
+  const scannerRef = useRef(null);
   const navigate = useNavigate();
 
-  const handleScan = (result, error) => {
-    if (!!result) {
-      const scannedUrl = result?.text || result;
-      setScannedData(scannedUrl);
-  
-      // Only redirect once
-      if (!hasScanned) {
-        setHasScanned(true);
-        window.location.href = scannedUrl; // or navigate(scannedUrl) for routes
-      }
+  useEffect(() => {
+    if (!hasScanned) {
+      const scanner = new Html5QrcodeScanner("reader", {
+        fps: 10,
+        qrbox: 250,
+      });
+
+      scanner.render(
+        (decodedText) => {
+          setScannedData(decodedText);
+
+          if (!hasScanned) {
+            setHasScanned(true);
+            scanner.clear(); // stop scanning
+            window.location.href = decodedText; // or navigate(decodedText)
+          }
+        },
+        (error) => {
+          // Suppress common scan errors
+          if (
+            error.message?.includes("e2") ||
+            error.message?.includes("finder") ||
+            error.name === "NotFoundException"
+          ) {
+            return;
+          }
+
+          console.error("QR scan error:", error);
+        }
+      );
+
+      scannerRef.current = scanner;
     }
-  
-    if (!!error) {
-      // Suppress common decoding errors (like "e2")
-      if (
-        error.message?.includes("e2") ||
-        error.message?.includes("finder") ||
-        error.name === "NotFoundException"
-      ) {
-        return; // Do nothing
-      }
-  
-      console.error("QR scan error:", error.message || error);
-    }
-  };
+
+    // Cleanup on unmount
+    return () => {
+      scannerRef.current?.clear().catch(() => {});
+    };
+  }, [hasScanned]);
 
   return (
     <div className="min-h-screen w-screen flex flex-col items-center justify-center bg-blue-100 text-black px-4 relative">
@@ -46,13 +61,7 @@ const AdminPage = () => {
 
       <h2 className="text-3xl font-bold mb-6">🛠️ Bus Administration Page</h2>
 
-      <div className="w-[300px] mb-4">
-        <QrReader
-          constraints={{ facingMode: "environment" }}
-          onResult={handleScan}
-          style={{ width: "100%" }}
-        />
-      </div>
+      <div id="reader" className="w-[300px] mb-4" />
 
       {scannedData && (
         <p className="bg-white px-4 py-2 rounded shadow text-center">
