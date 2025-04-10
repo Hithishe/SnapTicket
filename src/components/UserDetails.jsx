@@ -73,7 +73,7 @@ Passengers: ${passengers}
 Total Price: ₹${totalPrice}
 
 Thank you for using our service.
-        `.trim(),
+          `.trim(),
         }),
       });
 
@@ -87,7 +87,6 @@ Thank you for using our service.
 
   return (
     <div className="h-screen w-full flex items-center justify-center bg-gradient-to-br from-blue-200 to-blue-100 px-4 py-12">
-
       <div className="absolute top-4 left-4">
         <Link
           to="/"
@@ -109,7 +108,7 @@ Thank you for using our service.
           <select
             value={from}
             onChange={(e) => setFrom(e.target.value)}
-            className="w-full px-4 py-2 border rounded-md"
+            className="w-full px-4 py-2 border rounded-md text-black"
           >
             <option value="">Select starting point</option>
             <option value="Bangalore">Bangalore</option>
@@ -124,7 +123,7 @@ Thank you for using our service.
           <select
             value={to}
             onChange={(e) => setTo(e.target.value)}
-            className="w-full px-4 py-2 border rounded-md"
+            className="w-full px-4 py-2 border rounded-md text-black"
           >
             <option value="">Select destination</option>
             <option value="Bangalore">Bangalore</option>
@@ -141,7 +140,7 @@ Thank you for using our service.
             value={passengers}
             onChange={(e) => setPassengers(parseInt(e.target.value))}
             min="1"
-            className="w-full px-4 py-2 border rounded-md"
+            className="w-full px-4 py-2 border rounded-md text-black"
           />
         </div>
 
