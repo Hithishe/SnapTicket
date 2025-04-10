@@ -86,7 +86,8 @@ Thank you for using our service.
   };
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-blue-200 to-blue-100 px-4 py-12">
+    <div className="h-screen w-full flex items-center justify-center bg-gradient-to-br from-blue-200 to-blue-100 px-4 py-12">
+
       <div className="absolute top-4 left-4">
         <Link
           to="/"
