@@ -86,7 +86,7 @@ Thank you for using our service.
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-900">
+    <div className="min-h-screen w-screen flex flex-col items-center justify-center bg-blue-100 text-black px-4 relative">
       <div className="absolute top-4 left-4">
         <Link
           to="/"
@@ -95,9 +95,11 @@ Thank you for using our service.
           ← Back to Home
         </Link>
       </div>
+      <div className="=min-h-screen w-screen flex flex-col items-center justify-center bg-red-100 text-black px-4 space-y-6">
 
-      <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md">
+     
         <h2 className="text-2xl font-bold text-blue-800 mb-4 text-center">User Details</h2>
+        <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md space-y-6">
 
         <p className="text-gray-700 mb-4">
           <span className="font-semibold">Email:</span> {email}
@@ -159,6 +161,7 @@ Thank you for using our service.
           <p className="mt-4 text-sm text-gray-800 font-medium text-center">{message}</p>
         )}
       </div>
+    </div>
     </div>
   );
 };
