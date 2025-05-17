@@ -95,7 +95,7 @@ Thank you for using our service.
           ← Back to Home
         </Link>
       </div>
-      <div className="=min-h-screen w-screen flex flex-col items-center justify-center bg-red-100 text-black px-4 space-y-6">
+      <div className="=min-h-screen w-screen flex flex-col items-center justify-center bg-blue-100 text-black px-4 space-y-6">
 
      
         <h2 className="text-2xl font-bold text-blue-800 mb-4 text-center">User Details</h2>
@@ -113,9 +113,9 @@ Thank you for using our service.
             className="w-full px-4 py-2 border rounded-md text-black"
           >
             <option value="">Select starting point</option>
-            <option value="Bangalore">Bangalore</option>
-            <option value="Tirupati">Tirupati</option>
-            <option value="Vijayawada">Vijayawada</option>
+            <option value="Yeshwanthpura">Yeswanthpura</option>
+            <option value="Kempegowda Bus Station(Majestic)">Kempegowda Bus Station(Majestic)</option>
+            <option value="Yelahanka">Yelahanka</option>
             <option value="Puri">Puri</option>
           </select>
         </div>
@@ -128,9 +128,9 @@ Thank you for using our service.
             className="w-full px-4 py-2 border rounded-md text-black"
           >
             <option value="">Select destination</option>
-            <option value="Bangalore">Bangalore</option>
-            <option value="Tirupati">Tirupati</option>
-            <option value="Vijayawada">Vijayawada</option>
+            <option value="Yeshwanthpura">Yeswanthpura</option>
+            <option value="Kempegowda Bus Station(Majestic)">Kempegowda Bus Station(Majestic)</option>
+            <option value="Yelahanka">Yelahanka</option>
             <option value="Puri">Puri</option>
           </select>
         </div>
