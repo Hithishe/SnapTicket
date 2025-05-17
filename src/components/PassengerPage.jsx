@@ -21,7 +21,7 @@ const PassengerPage = () => {
       }
   
       const userDoc = doc(db, "users", String(aadhar));
-      const qrCodeLink = `https://e-ticket-git-main-hithishe-rs-projects.vercel.app/passenger/${aadhar}`;
+      const qrCodeLink = `https://snap-ticket-git-main-hithishe-rs-projects.vercel.app/passenger/${aadhar}`;
       console.log("Generated QR Code URL:", qrCodeLink);
   
       try {
