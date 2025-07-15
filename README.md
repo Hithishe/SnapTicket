@@ -1,12 +1,17 @@
-# React + Vite
+🚍 SnapTicket – QR-Based Smart Bus Ticketing System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+SnapTicket is a smart, paperless bus ticketing system built using React, Firebase, and Node.js.
+It allows passengers to register using their Aadhar number, generate a unique QR-based e-ticket, and receive travel details via email.
+Conductors can scan the QR to fetch passenger details and validate tickets in real-time.
 
-Currently, two official plugins are available:
+🎯 Features
+✅ Passenger registration with Aadhar & email
+✅ Unique QR code generation and download (PDF/Image)
+✅ Real-time QR scanning by conductors
+✅ Automatic email sending with travel ticket details
+✅ Firebase Firestore integration for data storage
+✅ Firebase Authentication for admin access
+✅ Responsive design using Tailwind CSS
+✅ Node.js backend for secure email delivery
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🖼️ Screenshots
