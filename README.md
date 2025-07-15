@@ -20,3 +20,4 @@ Conductors can scan the QR to fetch passenger details and validate tickets in re
   ---
 
 ### 🖼️ Screenshots
+![](Homepage.png)
