@@ -22,14 +22,15 @@ Conductors can scan the QR to fetch passenger details and validate tickets in re
 
 ### 🖼️ Screenshots
 
+![](Homepage.png)![](QRScanner.png)![](ETICKET.png)
 <p align="center">
   <img src="Homepage.png" alt="Homepage" width="300"/>
-  <img src="passenger registration.png" alt="QR Code" width="300"/>
+
 </p>
 
 <p align="center">
   <img src="QRScanner.png" alt="QR Scanner" width="300"/>
-  <img src="ticketdetails.png" alt="QR Code" width="300"/>
+  
 </p>
 <p align="center">
   <img src="ETICKET.png" alt="QR Scanner" width="300"/>
